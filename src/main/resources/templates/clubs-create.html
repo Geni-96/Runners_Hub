@@ -1,0 +1,35 @@
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Club Create</title>
+</head>
+<body class="d-flex flex-column h-100">
+<main class="flex-shrink-0">
+
+    <section layout:fragment="body" class="py-5">
+        <div class="container">
+            <form role="form" method="post" th:action="@{/clubs/new}" th:object="${club}">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" th:field="*{title}" placeholder="Title">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="photoUrl">PhotoUrl</label>
+                        <input type="text" class="form-control" id="photoUrl" name="photoUrl" th:field="*{photoUrl}" placeholder="Photo URL">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <input type="text" class="form-control" id="content" name="content" th:field="*{content}" placeholder="Enter content">
+                </div>
+                <button type="submit" class="btn btn-primary my-2">Create</button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>
