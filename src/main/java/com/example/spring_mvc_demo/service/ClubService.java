@@ -15,4 +15,6 @@ public interface ClubService {
     ClubDto findClubById(long clubId);
 
     void updateClub(ClubDto club);
+
+    void delete(long clubId);
 }
