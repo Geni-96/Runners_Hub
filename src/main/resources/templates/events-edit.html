@@ -2,13 +2,14 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <title>Create Event</title>
+    <title>Event Edit</title>
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
+
     <section layout:fragment="body" class="py-5">
         <div class="container">
-            <form role="form" method="post" th:action="@{/events/{clubId}(clubId=${clubId})}" th:object="${event}">
+            <form role="form" method="post" th:action="@{/events/{eventId}/edit(eventId=${eventId})}" th:object="${event}">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="name">Name</label>
@@ -36,10 +37,11 @@
                     <input type="datetime-local" class="form-control" id="endTime" name="endTime" th:field="*{endTime}" placeholder="End Time">
                     <p th:if="${#fields.hasErrors('endTime')}" class="text-danger" th:errors="*{endTime}"></p>
                 </div>
-                <button type="submit" class="btn btn-primary my-2">Create</button>
+                <button type="submit" class="btn btn-primary my-2">Update</button>
             </form>
         </div>
     </section>
+
 </main>
 
 </body>

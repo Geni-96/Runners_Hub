@@ -9,8 +9,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -31,5 +31,5 @@ public class Club {
     private LocalDateTime updatedOn;
 
     @OneToMany(mappedBy = "club", cascade = CascadeType.REMOVE)
-    private Set<Event> events = new HashSet<>();
+    private List<Event> events = new ArrayList<>();
 }
